@@ -13,9 +13,9 @@ contract MoneyTwitterIslandCrowdfunding {
     
     mapping(address => uint) public donations;
     
-    constructor(uint max, address contractCreator) {
+    constructor(uint max) {
         maximum = max;
-        creator = payable(contractCreator);
+        creator = payable(msg.sender);
     }
     
     function donate() public payable {
